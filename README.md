@@ -90,6 +90,10 @@ The -exec option used to send the output to next command.
            Sep 20 09:53:01 ids-1 kernel: device eth0 left promiscuous mode
            
 ### GREP
+
+* https://www.cyberciti.biz/faq/grep-regular-expressions/
+* https://learnbyexample.github.io/learn_gnugrep_ripgrep/breere-regular-expressions.html
+
 grep searches the input files for lines containing a match to a given pattern list. When it finds a match in a line, it prints the line to standard output (by default), or whatever other sort of output you have specified.
 
 How it can help to analyze logs?
