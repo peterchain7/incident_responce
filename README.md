@@ -21,6 +21,8 @@
          3. 
 ## Scripting For Analysis
 ### find command
+* https://thispointer.com/linux-find-files-larger-than-given-size/#:~:text=Size%20%3A%207.2G-,Find%20files%20larger%20than%201gb%20in%20Linux,1G%20in%20the%20find%20command.&text=It%20recursively%20searched%20for%20files%20inside%20the%20folder%20%E2%80%9C%2Fusr%2F,the%20paths%20of%20such%20files.
+
   The find command is used to search files and directories. You can search for files based on several criteria such as permission, modification/creation time, size, type etc. The syntax of the find command is as follows: `find [path...] [expression]`
 
 
@@ -140,7 +142,12 @@ Some of the options are:
  
           grep '02:58' snort.alerts
           02/23-06:02:58.539673 [**] [1:1852:4] WEB-MISC robots.txt access [**] [Classification: access to a potentially vulnerable web application
-          
+Grep with multiple patterns use `|`  to sepate patterns
+Exampe 
+  
+      grep "Denied|Forbidden" /var/log/httpd/error_log   
+ It will find all Denied and Forbidden words in error_log file `case sensitive`
+ 
 Using a simple regular expression to print alerts that belongs to 'MySQL and MYSQL'
 
       grep -i -e 'M.SQL' snort.alerts
