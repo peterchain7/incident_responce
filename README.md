@@ -18,7 +18,10 @@
       
          i. FIrst find the ip address of the server
          2. Go for statistics -> Resolved address & check for the domain name corresponding to the above destination address.(search for the ip address)
-         3. 
+5. findind nmap scans
+
+       ip.src == 192.168.112.128 and ip.dst == 192.168.112.139 and tcp.flags.ack == 1 and tcp.flags.reset == 1
+    
 ## Scripting For Analysis
 ### find command
 * https://thispointer.com/linux-find-files-larger-than-given-size/#:~:text=Size%20%3A%207.2G-,Find%20files%20larger%20than%201gb%20in%20Linux,1G%20in%20the%20find%20command.&text=It%20recursively%20searched%20for%20files%20inside%20the%20folder%20%E2%80%9C%2Fusr%2F,the%20paths%20of%20such%20files.
