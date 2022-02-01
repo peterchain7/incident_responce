@@ -8,7 +8,9 @@ Tools
    * https://book.hacktricks.xyz/pentesting/9200-pentesting-elasticsearch
    * https://infosecwriteups.com/haystack-hackthebox-writeup-7dfd8a6fed5  
    * https://github.com/elasticsearch-dump/elasticsearch-dump
-
+#### Kibana 
+   * https://remotephone.github.io/posts/CyberDefenders_GitTheGate/
+   * https://www.0ldmate.com/posts/tech/walkthrough-43f8146f64ee495ea39e69e02d73ff58/
 ## Wireshark
  1. Finding frames containing some files, Example which contains an image 20210429_152157.jpg
     
