@@ -21,7 +21,35 @@
 5. findind nmap scans
 
        ip.src == 192.168.112.128 and ip.dst == 192.168.112.139 and tcp.flags.ack == 1 and tcp.flags.reset == 1
+       
+   ## tshark packet analysis
+      1. Find the dns server used by an ip adress
+      
+           tshark -r e3.pcap -Y 'dns' |grep "192.168.112.139"
+      2. Find the public key used in server certificate public key that was used in TLS session
+      
+             tshark -r e3.pcap -Y 'tls.handshake.session_id == 73:13:00:00:24:37:c1:7b:df:a2:59:3d:d0:e0:b2:8d:39:1e:68:0f:76:4b:5d:b3:c4:05:9f:7a:ba:db:b2:8e'
+      3.  Finding How many open ports did the attacker find in packet
+      
+              tshark -r e3.pcap -Y "ip.dst==192.168.112.139 and ip.src==192.168.112.128" |grep "RST, ACK"|grep -v "443" |wc -l
+      4. Finding email addresses in a pcap files
+      
+              tshark -r e3.pcap -Y 'smtp' |grep "@"
+      5. Getting the CVE number from the pcap file document
+      
+              you can dump the file and submit to virustotal for further analysis
+      6. calculate `md5sum` of documents 
+      
+              md5sum <documnet name>
+
+    7. Finding  `URL` in malicious documents
     
+            unzip filename.docx
+        Then   
+        
+           unzip web_server.docx
+           cat word/document.xml |grep -i 'link'
+           
 ## Scripting For Analysis
 ### find command
 * https://thispointer.com/linux-find-files-larger-than-given-size/#:~:text=Size%20%3A%207.2G-,Find%20files%20larger%20than%201gb%20in%20Linux,1G%20in%20the%20find%20command.&text=It%20recursively%20searched%20for%20files%20inside%20the%20folder%20%E2%80%9C%2Fusr%2F,the%20paths%20of%20such%20files.
