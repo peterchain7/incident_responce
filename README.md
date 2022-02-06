@@ -11,6 +11,10 @@ Tools
 #### Kibana 
    * https://remotephone.github.io/posts/CyberDefenders_GitTheGate/
    * https://www.0ldmate.com/posts/tech/walkthrough-43f8146f64ee495ea39e69e02d73ff58/
+   * https://www.elastic.co/guide/en/beats/packetbeat/current/kibana-queries-filters.html
+   * https://www.elastic.co/guide/en/elasticsearch/reference/current/query-filter-context.html
+   
+   
 ## Wireshark
  1. Finding frames containing some files, Example which contains an image 20210429_152157.jpg
     
