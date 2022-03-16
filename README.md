@@ -66,7 +66,11 @@ Tools
         
            unzip web_server.docx
            cat word/document.xml |grep -i 'link'
-           
+  8. Convertng pcapng to pcap format with tshark
+  
+       
+         tshark -F pcap -r torrent.pcap -w torren_2.pcap 
+       
 ## Scripting For Analysis
 ### find command
 * https://thispointer.com/linux-find-files-larger-than-given-size/#:~:text=Size%20%3A%207.2G-,Find%20files%20larger%20than%201gb%20in%20Linux,1G%20in%20the%20find%20command.&text=It%20recursively%20searched%20for%20files%20inside%20the%20folder%20%E2%80%9C%2Fusr%2F,the%20paths%20of%20such%20files.
