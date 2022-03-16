@@ -70,7 +70,24 @@ Tools
   
        
          tshark -F pcap -r torrent.pcap -w torren_2.pcap 
-       
+  9. EXtract host names with tshark
+  
+           tshark -T fields -e http.host -r tor.pcap > dns.txt
+           cat dns.txt | sort | uniq -c | sort -nr | head
+10. User agents
+
+        tshark -R 'http contains "User-Agent:"' -T fields -e http.user_agent -r tor2b.pcap | sort | uniq -c | sort -nr | less
+        
+11.  Email address
+
+    tshark -r tor.pcap -R "data-text-lines" -T fields -e text > alldata.txt
+    grep -Eio '\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b' alldata.txt | sort | uniq
+    
+12. Requested urls
+We can also get a list of all the requested URLs (via the GET method):
+
+          tshark -r http-traffic.pcap -T fields -e http.host -e http.request.uri -Y 'http.request.method == "GET"' | sort | uniq | less  
+    
 ## Scripting For Analysis
 ### find command
 * https://thispointer.com/linux-find-files-larger-than-given-size/#:~:text=Size%20%3A%207.2G-,Find%20files%20larger%20than%201gb%20in%20Linux,1G%20in%20the%20find%20command.&text=It%20recursively%20searched%20for%20files%20inside%20the%20folder%20%E2%80%9C%2Fusr%2F,the%20paths%20of%20such%20files.
